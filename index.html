@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <script src="index.js"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
 
@@ -26,10 +27,9 @@
         position:absolute;
         text-anchor: center;
         text-align: center;
-        font-size: 1.5em;
+        font-size: 1.2em;
         width: 25vw;
         opacity: 0;
-        /* margin-bottom: 2vh; */
     }
     
     #text{
@@ -59,44 +59,6 @@
 <body onload="onLoad(); graph0()">
 
     <script>
-
-        // CODE GRAVEYARD
-        // var dates = []
-
-            // datum = data[0]
-
-            // var dateStrings = Object.keys(datum).slice(3)
-
-            // for(var j = 0; j < dateStrings.length; j++){
-            //     dates.push(getDate(dateStrings[j]));
-            // }
-
-         
-            // var header=["Date", "", "", "", "", ""]
-            // var columnData = [header]
-                
-            // for(var i = 0; i < dates.length; i++){
-            //     columnData.push([dates[i]])
-            // }
-
-            // var countryList = []
-            // for(var i = 0; i < data.length; i++) {
-            //     var datum = data[i]           
-                
-            //     var name = data[i]["Country/Region"]
-            //     header[i+1] = name
-                
-            //     var values = Object.values(datum).slice(3)
-
-            //     for(var j = 0; j < values.length; j++){
-            //         columnData[j].push(values[j])
-            //     }
-
-            // }
-
-            // console.log(countryList)
-        //
-
         const RED = "#FF595E"
         const BLUE = "#1982C4"
         const GREEN = "#8AC926"
@@ -299,25 +261,6 @@
 
             document.getElementById("header").innerHTML = "COVID-19 Cases in Europe"
 
-
-            console.log(maxValue)
-
-            // // CREATING SCALES
-           
-            // yScale = d3.scaleLinear()
-            // yScale.domain([0,maxValue])
-            // yScale.range([700, 0])
-
-            // ADDING AXES
-            // svg.append("g")
-            //     .call(d3.axisLeft(yScaleEurope))
-            //     .attr("class", "yaxis");
-            // svg.append("g")
-            //     .call(d3.axisBottom(xScale))
-            //     .attr("transform", "translate(0," + height + ")");
-
-
-
             svg.select(".yaxis")
                     .transition()
                     .duration(1000)
@@ -395,16 +338,6 @@
                 .duration(500)
                 .delay(1500)
                 .attr("style", "position: absolute; left: 550px; top: 750px; opacity: 1;")
-
-            // d3.select("#text")
-            //     .attr("style", "opacity:0")
-
-            // d3.select("#text")
-            //     .transition()
-            //     .duration(1000)
-            //     .attr("style", "opacity:1")
-
-            // d3.select("#text").text("Lets take a look at how COVID-19 spreads in relation to a country's geographical neighbors.")
 
             d3.select("#text2")
                 .attr("style", "opacity:0")
@@ -1097,10 +1030,6 @@
         <button class="nextButton" onclick="changeSlide()">Next</button>
         <button class="hiddenButton" onclick="clearGraph(); graph4()">Europe</button>
         <button class="hiddenButton" onclick="clearGraph(); graph5()">North America</button>
-
-        <!-- <button id="graph1" onclick="clearGraph(); graph1();">1</button>
-        <button id="graph2" onclick="clearGraph(); graph2();">2</button>
-        <button id="graph3" onclick="clearGraph(); graph3()">3</button> -->
     </div>
    
 </body>
